@@ -11,3 +11,6 @@ Requires Python
 5. Adjust faders to control volumes
 6. Tap refresh when the program list changes on the Windows host to update faders.
 
+# Screenshots
+![alt text](https://github.com/rmcclintick/Mixer_Control/blob/master/resources/App%20Screenshot.jpg "Client app Screenshot")
+![alt text](https://github.com/rmcclintick/Mixer_Control/blob/master/resources/Server%20Screenshot.png "Server Screenshot")
