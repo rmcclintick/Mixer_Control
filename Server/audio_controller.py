@@ -33,7 +33,7 @@ class AudioController(object):
         for session in sessions:
             interface = session.SimpleAudioVolume
             if session.Process and session.Process.name() == self.process_name:
-                #print('Volume:', interface.GetMasterVolume())  # debug
+                # print('Volume:', interface.GetMasterVolume())  # debug
                 return interface.GetMasterVolume()
 
     def set_volume(self, decibels):
@@ -44,7 +44,7 @@ class AudioController(object):
                 # only set volume in the range 0.0 to 1.0
                 self.volume = min(1.0, max(0.0, decibels))
                 interface.SetMasterVolume(self.volume, None)
-                #print(self.process_name, ' volume set to', self.volume)  # debug
+                # print(self.process_name, ' volume set to', self.volume)  # debug
 
     def decrease_volume(self, decibels):
         sessions = AudioUtilities.GetAllSessions()
@@ -52,7 +52,7 @@ class AudioController(object):
             interface = session.SimpleAudioVolume
             if session.Process and session.Process.name() == self.process_name:
                 # 0.0 is the min value, reduce by decibels
-                self.volume = max(0.0, self.volume-decibels)
+                self.volume = max(0.0, self.volume - decibels)
                 interface.SetMasterVolume(self.volume, None)
                 print('Volume reduced to', self.volume)  # debug
 
@@ -62,19 +62,14 @@ class AudioController(object):
             interface = session.SimpleAudioVolume
             if session.Process and session.Process.name() == self.process_name:
                 # 1.0 is the max value, raise by decibels
-                self.volume = min(1.0, self.volume+decibels)
+                self.volume = min(1.0, self.volume + decibels)
                 interface.SetMasterVolume(self.volume, None)
                 print('Volume raised to', self.volume)  # debug
 
-
-##def main():
-##    audio_controller = AudioController('msedge.exe')
-##    audio_controller.set_volume(1.0)
-##    audio_controller.mute()
-##    audio_controller.decrease_volume(0.25)
-##    audio_controller.increase_volume(0.05)
-##    audio_controller.unmute()
-
-
-if __name__ == "__main__":
-    main()
+# def main():
+#    audio_controller = AudioController('msedge.exe')
+#    audio_controller.set_volume(1.0)
+#    audio_controller.mute()
+#    audio_controller.decrease_volume(0.25)
+#    audio_controller.increase_volume(0.05)
+#    audio_controller.unmute()

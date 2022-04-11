@@ -55,7 +55,7 @@ class MixerControl:
         global audioControllers
         return len(audioControllers)
 
-    def refreshSessions(self):
+    def refreshSessions(self) -> list:
         global names
         global faders
         global audioControllers
@@ -81,6 +81,7 @@ class MixerControl:
             faders[i].set(ac.process_volume())
         for fader in faders:
             fader.pack()
+        return names
 
     def createRefreshBtn(self):
         global root
