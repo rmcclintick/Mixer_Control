@@ -14,3 +14,8 @@ Requires Python
 # Screenshots
 ![alt text](https://github.com/rmcclintick/Mixer_Control/blob/master/resources/App%20Screenshot.jpg "Client app Screenshot")
 ![alt text](https://github.com/rmcclintick/Mixer_Control/blob/master/resources/Server%20Screenshot.png "Server Screenshot")
+
+# What I learned:
+- Basic UI development for Android mobile applications
+- Python UI development with TKinter
+- UDP networking in both Python and Java
